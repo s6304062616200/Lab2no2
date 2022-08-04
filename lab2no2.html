@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>แบบฟอร์มจองทัวร์</h2>
+    <form action="form-echo.php" method="get">
+        <fieldset>
+            <legend>ข้อมูลทั่วไป</legend>
+            <label for="name">ชื่อ-สกุล:</label><br>
+            <input type="text" name="name" id="name" size="20" pattern="^[ก-๏\s]+$" placeholder="กรอกชื่อ-สกุล"><br>
+            <label for="mail">Email:</label><br>
+            <input type="text" name="mail" id="mail" size="20" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"><br>
+            <label for="phone">โทรศัพท์:</label><br>
+            <input type="text" name="phone" id="phone" size="20" maxlength="12" value="+66" pattern="[0-9]{9}">
+            <p>ที่อยู่:</p>
+            <textarea name="address" id="address" cols="30" rows="5"></textarea><br>
+            <label for="postcode">รหัสไปรษณีย์:</label>
+            <input type="text" name="postcode" id="postcode" size="10" pattern="\d{5}"><br>
+            <label for="mypicture">รูปผู้จอง:</label>
+            <input type="file" id="mypicture" name="mypicture">
+
+        </fieldset>
+        <fieldset>
+            <legend>ข้อมูลเข้าสู่ระบบ</legend>
+            <label for="username">Username:</label><br>
+            <input type="text" name="username" id="username" size="20" pattern="[0-9A-Za-z_]{8,}"><br>
+            <i>ประกอบด้วยตัวเลข ตัวอักษร หรือ_ตั้งแต่8ตัวขึ้นไป</i><br><br>
+            <label for="password">Password:</label><br>
+            <input type="password" name="password" id="password" size="20"
+                pattern="[\[\\\^\.\$\|\?\*\+\(\)\]0-9A-Za-z_]*8"><br>
+            <i>ประกอบด้วยตัวอักขระอะไรก็ได้ตั้งแต่8 ตัวขึ้นไป</i>
+        </fieldset>
+        <fieldset>
+            <legend>ข้อมูลทัวร์ที่ต้องการ</legend>
+            <label>แพ็คเกจทัวร์:
+                <select name="country" id="country">
+                    <option value="England">England</option>
+                    <option value="USA">USA</option>
+                    <option value="Japan">Japan</option>
+                </select>
+            </label><br>
+            <label for="date">วันที่เดินทาง:</label>
+            <input type="date" name="date" id="date"><br>
+            <label for="tourist">จำนวนผู้เดินทาง:</label>
+            <input type="text" name="tourist" id="tourist" size="20" pattern="[12345678910]"><br>
+            <label for="like">เน้นการท่องเที่ยวแบบใด?</label><br>
+            <input type="checkbox" name="shopping" value="shopping">ชอปปิ้ง <br>
+            <input type="checkbox" name="natural" value="natural">ธรรมชาติ <br>
+            <input type="checkbox" name="sea" value="sea">ทะเล<br>
+        </fieldset>
+        <br><br>
+        <label for="agree">ยอมรับเงื่อนไขข้อตกลง:
+            <input type="radio" name="agree" id="agree" checked="checked">I agree
+            <input type="radio" name="dagree" id="dagree">I don't agree
+        </label>
+        <input type="submit" value="จอง">
+    </form>
+
+
+
+
+</body>
+
+</html>
